@@ -9,11 +9,10 @@ puts "Cleaning database..."
 Restaurant.destroy_all
 
 puts "Creating restaurants..."
-fish_bone = { name: "Ficsh Bone", address: "420 Notre-Dame Ouest Local 4 Montréal, QC H2Y 1V3", phone_number: '438 584 1254' }
-rib_n_reef_steakhouse =  { name: "Rib n Reef Steakhouse", address: "8105 Decarie Blvd Montréal, QC H4P 2H5", phone_number: '514 584 3697' }
+Restaurant.create!(name: "Fish Bone", address: "420 Notre-Dame Ouest Local 4 Montreal, QC H2Y 1V3", phone_number: '438 584 1254', category: "chinese")
+Restaurant.create!(name: "Rib n Reef Steakhouse", address: "8105 Decarie Blvd Montreal, QC H4P 2H5", phone_number: '514 584 3697', category: "french")
+Restaurant.create!(name: "Chez Oim", address: "253 Guytan Street Montreal, H3M 2G5", phone_number: "514 254 3358", category: "french")
+Restaurant.create!(name: "Chez Oit", address: "253 Marlen Street Montreal, H5R 2H3", phone_number: "514 254 2156", category: "belgian")
+Restaurant.create!(name: "Chez Vous", address: "253 You Street Montreal, G5H 6R4", phone_number: "514 582 1258", category: "italian")
 
-[ fish_bone, rib_n_reef_steakhouse ].each do |attributes|
-  restaurant = Restaurant.create!(attributes)
-  puts "Created #{restaurant.name}"
-end
 puts "Finished!"
